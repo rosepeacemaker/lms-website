@@ -13,7 +13,7 @@ export default function MenuBar() {
   const baseStyles =
     "text-gray-700 text-[14px] font-semibold hover:underline hover:cursor-pointer transition-all duration-200";
   return (
-    <Menubar className="flex flex-row h-[70px] w-full justify-between items-center bg-white border border-amber-500 ">
+    <Menubar className="flex flex-row h-[60px] mt-1 w-full justify-between items-center bg-white border border-amber-300 p-6 ">
       <div className="flex items-center gap-2">
         <StarIcon size={30} fill="pink" />
         <span className="text-gray-800  font-semibold text-[18px]">Learn</span>
@@ -29,8 +29,8 @@ export default function MenuBar() {
       </div>
       <div className="flex flex-row gap-4 p-6">
         <Button
-          className="text-black bg-white p-1 px-4 rounded-lg"
-          initial={{}}
+          className="text-black bg-white p-1 px-4 rounded-lg border border-gray-400"
+          initial={{ translateX: -10 }}
           animate={{ translateY: 0 }}
           transition={{ duration: 0.1 }}
           whileHover={{ border: "blue" }}
