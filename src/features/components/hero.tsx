@@ -1,7 +1,7 @@
 import { Button } from "@/components/animate-ui/primitives/buttons/button";
 import React from "react";
 import CardContent from "./herocontent";
-import Cards from "./herofooter";
+
 
 export default function Hero() {
   return (

@@ -5,7 +5,7 @@ export default function CardContent() {
   return (
     <div className="flex items-center justify-center relative h-[40vh] w-full">
       <div className="flex flex-row items-center gap-6 absolute right-0 top-0 ">
-        <div className="bg-yellow-100 text-black p-4 rounded-lg shadow-md absolute right-[105%] bottom-1 flex flex-col items-center w-[200px] h-[120px]">
+        <div className="bg-yellow-100 text-black p-4 rounded-lg shadow-md absolute right-[105%] bottom-1 flex flex-col items-center w-[180px] h-[120px]">
           <div className="flex items-center gap-2">
             <span className="text-2xl font-bold">+150</span>
             <span className="text-sm">⭐</span>
