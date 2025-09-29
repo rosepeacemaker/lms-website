@@ -2,7 +2,7 @@ import React from "react";
 import { Menubar, MenubarMenu, MenubarTrigger } from "../ui/menubar";
 import { StarIcon } from "lucide-react";
 import { Button } from "../animate-ui/primitives/buttons/button";
-import { easeInOut, motion } from "motion/react";
+import { motion } from "motion/react";
 export default function MenuBar() {
   const menuItems = [
     { label: "Home", hoverText: "hover:text-purple-500" },
@@ -13,7 +13,7 @@ export default function MenuBar() {
   const baseStyles =
     "text-gray-700 text-[14px] font-semibold hover:underline hover:cursor-pointer transition-all duration-200";
   return (
-    <Menubar className="flex flex-row h-[60px] mt-1 w-full justify-between items-center bg-white border border-amber-300 p-6 ">
+    <Menubar className="flex flex-row h-[60px] mt-1 w-full justify-between items-center border-none shadow-none bg-white">
       <div className="flex items-center gap-2">
         <StarIcon size={30} fill="pink" />
         <span className="text-gray-800  font-semibold text-[18px]">Learn</span>
@@ -27,7 +27,7 @@ export default function MenuBar() {
           </MenubarMenu>
         ))}
       </div>
-      <div className="flex flex-row gap-4 p-6">
+      <div className="flex flex-row gap-4">
         <Button
           className="text-black bg-white p-1 px-4 rounded-lg border border-gray-400"
           initial={{ translateX: -10 }}
