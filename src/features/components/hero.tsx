@@ -23,10 +23,10 @@ export default function Hero() {
             experienced mentor
           </p>
           <div className="flex flex-row gap-3 mt-8">
-            <Button className="px-6 py-1.5 text-white text-xs bg-black rounded-lg">
+            <Button className="px-6 py-2 text-white text-xs bg-black rounded-lg">
               Browse courses
             </Button>
-            <Button className="px-6 py-1.5 bg-white text-xs rounded-lg text-black border border-gray-400">
+            <Button className="px-6 py-2 bg-white text-xs rounded-lg text-black border border-gray-400">
               Become mentor
             </Button>
           </div>
