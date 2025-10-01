@@ -6,7 +6,7 @@ import React from "react";
 
 export default function LandingPage() {
   return (
-    <MainScreen className="bg-white w-full h-screen flex flex-col">
+    <MainScreen className="bg-white flex-col px-16">
       <MenuBar />
       <HeroPage />
       <Cards />

@@ -1,3 +1,4 @@
+'use client'
 import { Button } from "@/components/animate-ui/primitives/buttons/button";
 import {
   Card,
@@ -7,10 +8,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Cards() {
-  const cardsbtn = [
+  const [activeItem, setActiveItem] = useState<string>("");
+  const cardBtn = [
     { name: "Product Design", active: true },
     { name: "Marketing", active: false },
     { name: "SMM", active: false },
@@ -23,65 +25,67 @@ export default function Cards() {
     { name: "Illustrations", active: false },
   ];
   return (
-    <div className="flex flex-1 w-full mt-6 mb-2 gap-3">
-      <div className="flex flex-row flex-1 w-[40%]">
-        <div className="flex flex-col flex-1">
-          <Card className="bg-green-200 flex flex-1 rounded-lg p-4 text-center">
-            <CardHeader>
-              <CardTitle className="text-gray-700">
-                unlock new skills for your learning,unlock new skills for your
-                learning
-              </CardTitle>
+    <div className="flex flex-1 mt-4 gap-4">
+      <div className="flex flex-col w-[32%]">
+        <Card className="bg-green-200 flex flex-1 rounded-3xl p-6 text-center">
+          <CardHeader>
+            <CardTitle className="text-gray-700 px-10 text-xl font-mono">
+              Unlock new skills for your learning
+            </CardTitle>
+          </CardHeader>
+          <CardAction className="flex flex-1 items-center justify-center w-full">
+            <Button className="rounded-full border border-black bg-green-200 px-5 py-2 text-xs">
+              More Learn
+            </Button>
+          </CardAction>
+        </Card>
+        <div className="flex flex-row flex-1 gap-5 mt-4">
+          <Card className="bg-gray-200 flex flex-1 text-black py-3 rounded-3xl shadow-md justify-center">
+            <CardHeader className="flex items-center flex-col">
+              <CardTitle className="text-4xl font-semibold">+120</CardTitle>
+              <CardContent className="text-center text-gray-700 text-[10px] font-normal px-7">
+                Online courses for your learning.
+              </CardContent>
             </CardHeader>
-            <CardAction className="flex flex-1 items-center justify-center w-full">
-              <Button className="rounded-full border border-gray-400 bg-green-200 px-4 py-1">
-                Learn more
-              </Button>
-            </CardAction>
           </Card>
-          <div className="flex flex-row flex-1 gap-5 mt-4">
-            <Card className="bg-gray-200 flex flex-1 text-black p-4 rounded-lg shadow-md">
-              <CardHeader className="flex items-center flex-col">
-                <CardTitle className="text-2xl font-bold">+120</CardTitle>
-                <CardContent className="text-center text-gray-700 text-[14px] font-semibold">
-                  online courses for your learniing.
-                </CardContent>
-              </CardHeader>
-            </Card>
-            <Card className="bg-black text-gray-200 flex flex-1 p-4 rounded-lg shadow-md">
-              <CardHeader className="flex items-center flex-col">
-                <CardTitle className="text-2xl font-bold">+120K</CardTitle>
-                <CardContent className="text-center text-gray-500 text-[16px] font-semibold">
-                  Student trused our platform
-                </CardContent>
-              </CardHeader>
-            </Card>
-          </div>
+          <Card className="bg-black text-gray-200 flex flex-1 py-3 rounded-3xl shadow-md justify-center">
+            <CardHeader className="flex items-center flex-col">
+              <CardTitle className="text-4xl font-semibold">+120K</CardTitle>
+              <CardContent className="text-center text-white text-[10px] font-normal px-8">
+                Student trusted our platform
+              </CardContent>
+            </CardHeader>
+          </Card>
         </div>
       </div>
-      <div className="flex-1 w-[60%] rounded-2xl bg-purple-100">
-        <div className="flex flex-row gap-2 border mt-4 p-4">
-          {cardsbtn.map((items, index) => (
+      <div className="flex flex-col flex-1 rounded-3xl p-6 bg-purple-100">
+        <div className="flex flex-row gap-4 border mt-4 flex-wrap">
+          {cardBtn.map((items, index) => (
             <button
+              onClick={() => setActiveItem(items.name)}
               key={index}
-              className={`px-4 py-1.5 text-black text-[10px] rounded-full ${
-                items.active ? "bg-black text-white" : "bg-white text-black"
+              className={`px-8 py-2 text-black text-xs rounded-full ${
+                activeItem === items.name
+                  ? "bg-black text-white"
+                  : "bg-transparent border border-black text-black"
               }`}
             >
               {items.name}
             </button>
           ))}
         </div>
-        <div className="flex flex-col p-5">
-          <h2 className="text-4xl font-bold mt-6 mb-4">Popular Courses</h2>
-          <p className="text-lg text-black mb-4">
-            Our platform features top-notch courses across various domains.
-            Crafted by leading experts, these programs ensure you receive
-            high-quality and up-to-date knowledge for your success.
-          </p>
-          <span className="flex flex-1 w-full justify-end items-center">
-            <ArrowUpRightFromSquareIcon size={45} className="font-bold" />
-          </span>
+        <div className="flex flex-col gap-8">
+          <h2 className="text-5xl font-semibold mt-10">Popular Courses</h2>
+          <div className="flex flex-row justify-between">
+            <p className="text-md text-gray-500 pr-85">
+              Our platform features top-notch courses across various domains.
+              Crafted by leading experts, these programs ensure you receive
+              high-quality and up-to-date knowledge for your success.
+            </p>
+            <span className="flex flex-1 w-full justify-end items-center">
+              <ArrowUpRightFromSquareIcon size={100} className="font-bold" />
+            </span>
+          </div>
         </div>
       </div>
     </div>
